@@ -1,6 +1,12 @@
 public class Demo06 {
     public static void main(String[] args) {
-        new Aviary().release(new Bird());
-        new Aviary().release(new Penguin()); // runtime error
+        Aviary aviary = new Aviary();
+        aviary.release(new Bird());
+        Bird penguin = new Penguin();
+        if (penguin instanceof Flyable) {
+            aviary.release((Flyable) penguin);
+        } else {
+            System.out.println("Penguin can't be released by flying!");
+        }
     }
 }

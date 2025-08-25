@@ -1,5 +1,8 @@
 public class Demo03 {
     public static void main(String[] args) {
-        System.out.println(new ShippingCostCalculator().cost(new Shipment("EXPRESS", 2.0)));
+        ShippingCostCalculator calculator = new ShippingCostCalculator();
+        System.out.println(calculator.cost(new Shipment("EXPRESS", 2.0)));
+        System.out.println(calculator.cost(new Shipment("STANDARD", 3.0)));
+        System.out.println(calculator.cost(new Shipment("OVERNIGHT", 1.5)));
     }
 }

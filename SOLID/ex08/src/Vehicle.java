@@ -1,5 +1,11 @@
-public interface Vehicle {
-    void startEngine();
-    void pedal(int effort);
-    void recharge(int kWh);
-}
+// public interface EnginePowered {
+//     void startEngine();
+// }
+
+// public interface Pedalable {
+//     void pedal(int effort);
+// }
+
+// public interface Rechargeable {
+//     void recharge(int kWh);
+// }

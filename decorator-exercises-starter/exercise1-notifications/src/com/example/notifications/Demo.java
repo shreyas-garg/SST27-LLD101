@@ -29,5 +29,21 @@ public class Demo {
         //
         // Notifier full = new SlackDecorator(new WhatsAppDecorator(base, "user_wa"), "deployments");
         // full.notify("Deployment completed 🚀");
+
+        // a) Email + SMS
+        Notifier emailAndSms = new SmsDecorator(base, "+91-99999-11111");
+        emailAndSms.notify("Email + SMS notification");
+
+        // b) Email + WhatsApp
+        Notifier emailAndWa = new WhatsAppDecorator(base, "user_wa");
+        emailAndWa.notify("Email + WhatsApp notification");
+
+        // c) Email + Slack
+        Notifier emailAndSlack = new SlackDecorator(base, "general");
+        emailAndSlack.notify("Email + Slack notification");
+
+        // d) Email + WhatsApp + Slack
+        Notifier emailWaSlack = new SlackDecorator(new WhatsAppDecorator(base, "user_wa"), "deployments");
+        emailWaSlack.notify("Email + WhatsApp + Slack notification");
     }
 }
